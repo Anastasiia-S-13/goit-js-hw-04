@@ -1,16 +1,15 @@
 function calcAverageCalories(days) {
-    let totalArr = [];
-    let totalPrice = 0;
-    for (const day of days) {
-        if (day[""] === days.calories) {
-            totalArr.push(day.calories);
-        }
-    }
 
-    for (let item of totalArr) {
-        totalPrice += item;
+    let total = 0;
+
+    if (days.length === 0) {
+        return 0;
+    } else {
+         for (const day of days) {
+            total += day.calories;
+        }
+        return total / days.length;
     }
-    return totalPrice / 7;
 }
 
 
